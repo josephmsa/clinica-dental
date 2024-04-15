@@ -1,20 +1,55 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './public/home/home.component';
-import { AboutComponent } from './public/about/about.component';
-import { ConactComponent } from './public/conact/conact.component';
-import { PriceComponent } from './public/price/price.component';
-import { AppointmentComponent } from './public/appointment/appointment.component';
-import { TeamComponent } from './public/team/team.component';
-import { TestimonialComponent } from './public/testimonial/testimonial.component';
-import { ServiciosComponent } from './public/servicios/servicios.component';
 
 export const routes: Routes = [
-    {path: 'home', component: HomeComponent},
-    {path: 'about', component: AboutComponent},
-    {path: 'contact', component: ConactComponent},
-    {path: 'servicios', component: ServiciosComponent},
-    {path: 'price', component: PriceComponent},
-    {path: 'appointment', component: AppointmentComponent},
-    {path: 'team', component: TeamComponent},
-    {path: 'testimonial', component: TestimonialComponent}
+  {
+    path: 'home',
+    loadComponent: () =>
+      import('./public/home/home.component').then((c) => c.HomeComponent),
+  },
+  {
+    path: 'about',
+    loadComponent: () =>
+      import('./public/about/about.component').then((c) => c.AboutComponent),
+  },
+  {
+    path: 'contact',
+    loadComponent: () =>
+      import('./public/conact/conact.component').then((c) => c.ConactComponent),
+  },
+  {
+    path: 'services',
+    loadComponent: () =>
+      import('./public/servicios/servicios.component').then(
+        (c) => c.ServiciosComponent
+      ),
+  },
+  {
+    path: 'price',
+    loadComponent: () =>
+      import('./public/price/price.component').then((c) => c.PriceComponent),
+  },
+  {
+    path: 'appointment',
+    loadComponent: () =>
+      import('./public/appointment/appointment.component').then(
+        (c) => c.AppointmentComponent
+      ),
+  },
+  {
+    path: 'team',
+    loadComponent: () =>
+      import('./public/team/team.component').then((c) => c.TeamComponent),
+  },
+  {
+    path: 'testimonial',
+    loadComponent: () =>
+      import('./public/testimonial/testimonial.component').then(
+        (c) => c.TestimonialComponent
+      ),
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
 ];
