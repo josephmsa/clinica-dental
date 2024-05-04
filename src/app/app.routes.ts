@@ -48,6 +48,11 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'cites',
+    loadChildren: () =>
+      import('./public/client/client.routes').then((c) => c.clientRoutes),
+  },
+  {
     path: '**',
     redirectTo: 'home',
     pathMatch: 'full',
