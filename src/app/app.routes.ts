@@ -48,7 +48,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'cites',
+    path: 'client',
     loadChildren: () =>
       import('./public/client/client.routes').then((c) => c.clientRoutes),
   },

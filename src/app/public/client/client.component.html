@@ -1,1 +1,32 @@
-<p>client works!</p>
+<div class="container">
+  <div class="sidebar">
+    <ul>
+      <li>
+        <a [routerLink]="['/', 'client', 'cites']" routerLinkActive="active"
+          >Citas</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['/', 'client', 'employes']" routerLinkActive="active"
+          >Empleados</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['/', 'client', 'schedule']" routerLinkActive="active"
+          >Horario</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['/', 'client', 'patients']" routerLinkActive="active"
+          >Pacientes</a
+        >
+      </li>
+      <li>
+        <a [routerLink]="['/', 'client', 'user']" routerLinkActive="active"
+          >Usuarios</a
+        >
+      </li>
+    </ul>
+  </div>
+  <router-outlet></router-outlet>
+</div>

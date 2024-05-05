@@ -1,0 +1,34 @@
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Tipo Documento</th>
+        <th>Documento</th>
+        <th>Fecha Nacimiento</th>
+        <th>Teléfono</th>
+        <th>Email</th>
+        <th>Dirección</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (paciente of pacientes; track $index) {
+      <tr>
+        <td>{{ paciente.paciente_Id }}</td>
+        <td>{{ paciente.nombre }}</td>
+        <td>{{ paciente.apellido }}</td>
+        <td>{{ paciente.tipo_Documento }}</td>
+        <td>{{ paciente.documento }}</td>
+        <td>{{ paciente.fecha_Nacimiento }}</td>
+        <td>{{ paciente.telefono }}</td>
+        <td>{{ paciente.email }}</td>
+        <td>{{ paciente.direccion }}</td>
+        <td>{{ paciente.estado }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

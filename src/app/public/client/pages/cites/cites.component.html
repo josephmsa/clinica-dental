@@ -1,1 +1,26 @@
-<p>cites works!</p>
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id Cita</th>
+        <th scope="col">Id Empleado</th>
+        <th scope="col">Motivo</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Hora</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (cite of cites; track $index) {
+      <tr [routerLink]="['/','client', 'cites', 'detail', cite.cita_Id]">
+        <th scope="row">{{ cite.cita_Id }}</th>
+        <td>{{ cite.empleado_Id }}</td>
+        <td>{{ cite.motivo }}</td>
+        <td>{{ cite.estado }}</td>
+        <td>{{ cite.fecha_Cita | date : "dd/MM/yyyy" }}</td>
+        <td>{{ cite.hora_Cita }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

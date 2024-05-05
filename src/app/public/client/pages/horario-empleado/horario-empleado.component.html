@@ -1,0 +1,58 @@
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Empleado ID</th>
+        <th scope="col">Lunes</th>
+        <th scope="col">Martes</th>
+        <th scope="col">Miércoles</th>
+        <th scope="col">Jueves</th>
+        <th scope="col">Viernes</th>
+        <th scope="col">Sábado</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (horario of horarios; track $index) {
+      <tr>
+        <td>{{ horario.empleado_Id }}</td>
+        @if (horario.dia_Semana === 'Lunes') {
+        <td>{{ horario.hora_Inicio }} - {{ horario.hora_Fin }}</td>
+        } @if (horario.dia_Semana === 'Martes') {
+        <td></td>
+        <td>{{ horario.hora_Inicio }} - {{ horario.hora_Fin }}</td>
+        }@if (horario.dia_Semana === 'Miercoles') {
+        <td></td>
+        <td></td>
+        <td>{{ horario.hora_Inicio }} - {{ horario.hora_Fin }}</td>
+        }@if (horario.dia_Semana === 'Jueves') {
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{ horario.hora_Inicio }} - {{ horario.hora_Fin }}</td>
+        }@if (horario.dia_Semana === 'Viernes') {
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{ horario.hora_Inicio }} - {{ horario.hora_Fin }}</td>
+        }@if (horario.dia_Semana === 'Sabado') {
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{ horario.hora_Inicio }} - {{ horario.hora_Fin }}</td>
+        }@if (horario.dia_Semana === 'Domingo') {
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{ horario.hora_Inicio }} - {{ horario.hora_Fin }}</td>
+        }
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

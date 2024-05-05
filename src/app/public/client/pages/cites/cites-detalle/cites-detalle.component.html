@@ -1,0 +1,36 @@
+<div class="container">
+  <table class="table table-striped">
+      <thead>
+          <tr>
+              <th scope="col">Descripción</th>
+              <th scope="col">Valor</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>ID</td>
+              <td>{{detail.cita_Id}}</td>
+          </tr>
+          <tr>
+              <td>ID Paciente</td>
+              <td>{{detail.paciente_Id}}</td>
+          </tr>
+          <tr>
+              <td>Fecha</td>
+              <td>{{detail.fecha_Cita | date: 'dd/MM/yyyy'}}</td>
+          </tr>
+          <tr>
+              <td>Hora</td>
+              <td>{{detail.hora_Cita}}</td>
+          </tr>
+          <tr>
+              <td>Motivo</td>
+              <td>{{detail.motivo}}</td>
+          </tr>
+          <tr>
+              <td>Estado de cita</td>
+              <td>{{detail.estado}}</td>
+          </tr>
+      </tbody>
+  </table>
+</div>

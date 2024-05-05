@@ -1,0 +1,24 @@
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Usuario ID</th>
+        <th>Nombre de Usuario</th>
+        <th>Correo</th>
+        <th>Contraseña</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (usuario of usuarios; track $index) {
+      <tr>
+        <td>{{ usuario.usuario_Id }}</td>
+        <td>{{ usuario.nom_Usuario }}</td>
+        <td>{{ usuario.correo }}</td>
+        <td>{{ usuario.contrasena }}</td>
+        <td>{{ usuario.estado }}</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
