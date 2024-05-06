@@ -48,6 +48,11 @@ export const routes: Routes = [
       ),
   },
   {
+    path: 'login',
+    loadComponent: () =>
+      import('./public/client/pages/login/login.component').then((c) => c.LoginComponent),
+  },
+  {
     path: 'client',
     loadChildren: () =>
       import('./public/client/client.routes').then((c) => c.clientRoutes),

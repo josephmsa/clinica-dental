@@ -21,17 +21,17 @@ export const clientRoutes: Routes = [
           ),
       },
       {
-        path:'patients',
-        loadChildren:()=>
+        path: 'patients',
+        loadChildren: () =>
           import('./pages/pacientes/pacientes.routes').then(
-            (c)=>c.pacientesRoutes
+            (c) => c.pacientesRoutes
           ),
       },
       {
         path: 'user',
-        loadChildren:()=>
+        loadChildren: () =>
           import('./pages/usuarios/usuarios.routes').then(
-            (c)=>c.usuariosRoutes
+            (c) => c.usuariosRoutes
           ),
       },
       {
@@ -39,7 +39,17 @@ export const clientRoutes: Routes = [
         loadChildren: () =>
           import('./pages/cites/cites.routes').then((c) => c.citersRoutes),
       },
-    ]
+      {
+        path: '',
+        redirectTo: 'cites',
+        pathMatch: 'full',
+      },
+    ],
+  },
+  {
+    path: 'login',
+    loadComponent: () =>
+      import('./pages/login/login.component').then((c) => c.LoginComponent),
   },
   {
     path: '',

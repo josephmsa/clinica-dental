@@ -2,23 +2,36 @@ import { Routes } from '@angular/router';
 
 export const citersRoutes: Routes = [
   {
-    path: 'list-cites',
+    path: '',
     loadComponent: () =>
       import('./cites.component').then((c) => c.CitesComponent),
-  },
-  {
-    path: 'detail/:id',
-    loadComponent: () =>
-      import('./cites-detalle/cites-detalle.component').then((c) => c.CitesDetalleComponent),
-  },
-  {
-    path: '',
-    redirectTo: 'list-cites',
-    pathMatch: 'full',
-  },
-  {
-    path: '**',
-    redirectTo: 'list-cites',
-    pathMatch: 'full',
+    children: [
+      {
+        path: 'list-cites',
+        loadComponent: () =>
+          import('./pages/table-cites/table-cites.component').then(
+            (c) => c.TableCitesComponent
+          ),
+      },
+      {
+        path: 'detail/:id',
+        loadComponent: () =>
+          import('./pages/cites-detalle/cites-detalle.component').then(
+            (c) => c.CitesDetalleComponent
+          ),
+      },
+      {
+        path: 'create-cites',
+        loadComponent: () =>
+          import('./pages/add-cites/add-cites.component').then(
+            (c) => c.AddCitesComponent
+          ),
+      },
+      {
+        path: '',
+        redirectTo: 'list-cites',
+        pathMatch: 'full',
+      },
+    ],
   },
 ];

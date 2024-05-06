@@ -1,0 +1,60 @@
+<form [formGroup]="formCites" (ngSubmit)="addCite()" class="container">
+  <div class="form-group col">
+    <label for="name">ID CITA</label>
+    <input
+      type="number"
+      class="form-control"
+      id="name"
+      formControlName="idCite"
+    />
+  </div>
+  <div class="form-group">
+    <label for="name">ID PACIENTE</label>
+    <input
+      type="number"
+      class="form-control"
+      id="name"
+      formControlName="PatientId"
+    />
+  </div>
+  <div class="form-group">
+    <label for="name">ID EMPLEADO</label>
+    <select class="form-control"  formControlName="EmployeeId">
+      @for (empleado of empleados; track $index) {
+        <option value="{{ empleado.empleado_Id }}">
+          {{ empleado.nombre }}
+        </option>
+      }
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="name">Fecha</label>
+    <input type="date" class="form-control" id="name" formControlName="date" />
+  </div>
+  <div class="form-group">
+    <label for="name">Hora</label>
+    <input type="time" class="form-control" id="name" formControlName="time" />
+  </div>
+  <div class="form-group">
+    <label for="name">Motivo</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Motivo de la cita"
+      formControlName="reason"
+    />
+  </div>
+  <div class="form-group">
+    <label for="name">Estado</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Estado de la cita"
+      formControlName="status"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Añadir</button>
+</form>

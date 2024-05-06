@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CitesService } from '../services/cites.service';
-import { Detail } from '../interfaces/cites.interface';
+import { CitesService } from '../../services/cites.service';
+import { Detail } from '../../interfaces/cites.interface';
 import { ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 

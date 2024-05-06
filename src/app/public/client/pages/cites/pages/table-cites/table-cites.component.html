@@ -1,0 +1,51 @@
+<div class="container">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id Cita</th>
+        <th scope="col">Id Empleado</th>
+        <th scope="col">Motivo</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Ver</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (cite of cites; track $index) {
+      <tr>
+        <th scope="row">{{ cite.cita_Id }}</th>
+        <td>{{ cite.empleado_Id }}</td>
+        <td>{{ cite.motivo }}</td>
+        <td>{{ cite.estado }}</td>
+        <td>{{ cite.fecha_Cita | date : "dd/MM/yyyy" }}</td>
+        <td>{{ cite.hora_Cita }}</td>
+        <td>
+          <button
+            class="btn btn-primary"
+            [routerLink]="['/', 'client', 'cites', 'detail', cite.cita_Id]"
+          >
+            Ver cita
+          </button>
+        </td>
+        <td>
+          <button class="btn btn-secondary" (click)="deleteCite(cite.cita_Id)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+      }
+      <tr>
+        <td colspan="6">
+          <button
+            class="btn btn-primary"
+            [routerLink]="['/', 'client', 'cites', 'create-cites']"
+          >
+            <i class="fa fa-plus"></i> Añadir cita
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
